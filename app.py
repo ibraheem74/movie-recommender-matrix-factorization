@@ -29,5 +29,5 @@ if st.button("Recommend"):
             movie_prediction.append((movie_id, pred))
     movie_prediction.sort(key=lambda x: x[1], reverse=True)
     for movie_id,pred in movie_prediction[:10]:
-        st.write(titles[movie_id],round(pred,2))
+        st.write(titles[movie_id],round(min(pred,5),2))
         
