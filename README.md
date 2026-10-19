@@ -46,6 +46,8 @@ I trained for 30 epochs and measured test RMSE every 5 epochs to find where the 
 | 25 | about 0.73 | 0.939 |
 | 30 | about 0.69 | 0.950 |
 
+![Training vs test RMSE by epoch](overfitting_curve.png)
+
 An earlier run with only 3 epochs gave a test RMSE of 0.972.
 
 Training error keeps falling, but test error is lowest at about 20 epochs and then rises. After that point the model memorizes the training ratings instead of learning general taste, which is overfitting. I stopped at 20 epochs (early stopping).
@@ -99,6 +101,7 @@ project-3/
 ├── gobel_rating.pkl       # saved global average rating
 ├── requirements.txt       # dependencies
 ├── screenshot.png         # app screenshot used in this README
+├── overfitting_curve.png  # training vs test RMSE chart used in this README
 ├── .gitignore             # ignores the dataset folder and Python cache files
 └── README.md
 ```
