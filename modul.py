@@ -11,7 +11,7 @@ movie_bias=np.zeros(df["movie_id"].nunique())
 gobel_rating=train_data["rating"].mean()
 lr,reg = 0.01,0.02
 
-no_epoch=3
+no_epoch=20
 for epoch in range(no_epoch):  
     total =0 
     for index,row in train_data.iterrows():
@@ -31,9 +31,6 @@ for epoch in range(no_epoch):
         user_factor[u]+=lr*(err*movie_factor[m]-reg*user_factor[u])
         movie_factor[m]+=lr*(err*old_user-reg*movie_factor[m])
 
-        #new_pred=gobel_rating+user_bias[u]+movie_bias[m]+np.dot(user_factor[u], movie_factor[m])
-        #new_err=r-new_pred
-
     print(epoch, total / len(train_data))
     
 test_total =0 
@@ -47,7 +44,7 @@ for index,row in test_data.iterrows():
     err=r-pred
     test_total+=err**2
 
-print((test_total / len(test_data))**0.5)
+print("test", epoch, (test_total / len(test_data))**0.5)
 user_id=2
 u=user_id-1
 predictions=[]
@@ -77,4 +74,3 @@ joblib.dump(movie_factor,"movie_factor.pkl")
 joblib.dump(user_bias,"user_bias.pkl")
 joblib.dump(movie_bias,"movie_bias.pkl")
 joblib.dump(gobel_rating,"gobel_rating.pkl")
-print("succesfully saved modul")
