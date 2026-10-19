@@ -57,7 +57,7 @@ Note: the epoch count was chosen by looking at the test score. This is a mild fo
 | Metric | Value |
 |---|---|
 | Test RMSE (3 epochs, first run) | 0.972 |
-| Test RMSE (20 epochs, final model) | about 0.93 |
+| Test RMSE (20 epochs, final model) | 0.934 |
 
 The exact value changes slightly in the third decimal between runs because the starting factors are random. Always predicting the global average rating gives a noticeably higher error (about 1.1 on this dataset), so the model has learned real patterns.
 
