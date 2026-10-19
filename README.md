@@ -42,6 +42,10 @@ rating = global average + user bias + movie bias + (user factors . movie factors
 
 The small gap between training and test error suggests the model is not badly overfitting. Always predicting the global average rating gives a noticeably higher error (about 1.1 on this dataset), so the model has learned real patterns.
 
+## App Screenshot
+
+![Streamlit app showing top 10 recommendations for user 20](screenshot.png)
+
 ## Observations
 
 Top-10 lists for different users overlap strongly. User 1 and user 2 share 5 of 10 movies, and user 1 and user 43 share 7 of 10. The recommendations are mostly well-known, highly rated classics (Casablanca, Rear Window, Schindler's List, and similar). This points to movie bias dominating the predictions, with personalization from the latent factors having a smaller effect.
